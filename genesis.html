@@ -192,3 +192,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   </script>
 </body>
 </html>
+<script>
+(function() {
+  function hideBundlerErr() {
+    var el = document.getElementById('__bundler_err');
+    if (el) el.style.setProperty('display', 'none', 'important');
+  }
+  hideBundlerErr();
+  new MutationObserver(hideBundlerErr).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
