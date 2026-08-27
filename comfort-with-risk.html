@@ -18,11 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #1E3A5F; --navy-dark: #152B47; --blue-mid: #2B5EA7;
-      --accent: #6EB3D6; --cream: #F5F3EF; --white: #FFFFFF;
-      --text: #1A1A2E; --muted: #5A6478; --border: #DDE2EA;
-    }
+    :root { --navy: #1E3A5F; --navy-dark: #152B47; --blue-mid: #2B5EA7; --accent: #6EB3D6; --cream: #F5F3EF; --white: #FFFFFF; --text: #1A1A2E; --muted: #5A6478; --border: #DDE2EA; }
     body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; overflow-x: hidden; }
 
     nav { background: var(--cream); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 200; gap: 1.5rem; }
@@ -30,36 +26,15 @@
     .nav-wordmark { font-size: 0.85rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
     .nav-sub { font-size: 0.7rem; color: var(--muted); font-weight: 400; line-height: 1.2; }
     .nav-links { display: flex; align-items: center; gap: 1.5rem; flex: 1; justify-content: center; flex-wrap: wrap; }
-    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; white-space: nowrap; transition: color 0.15s; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text); text-decoration: none; white-space: nowrap; }
     .nav-links a:hover, .nav-links a.active { color: var(--navy); font-weight: 700; }
-    .nav-cta { background: var(--navy); color: var(--white); padding: 0.6rem 1.4rem; border-radius: 8px; font-size: 0.875rem; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s; }
+    .nav-cta { background: var(--navy); color: var(--white); padding: 0.6rem 1.4rem; border-radius: 8px; font-size: 0.875rem; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     .nav-cta:hover { background: var(--navy-dark); }
     @media (max-width: 768px) { .nav-links { display: none; } }
 
-    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); min-height: 92vh; padding: 5rem 2rem 4rem; position: relative; overflow: hidden; display: flex; align-items: center; }
-
-    .bubble { position: absolute; background: var(--white); border-radius: 14px; padding: 0.85rem 1rem; box-shadow: 0 6px 24px rgba(0,0,0,0.15); max-width: 170px; opacity: 0; z-index: 10; }
-    .bubble-tl { top: 24px; left: 24px; animation: bIn1 0.7s ease forwards 0.4s, bob 4s ease-in-out infinite 1.2s; }
-    .bubble-tr { top: 24px; right: 24px; animation: bIn2 0.7s ease forwards 0.7s, bob 5s ease-in-out infinite 1.5s; }
-    .bubble-br { bottom: 24px; right: 24px; animation: bIn2 0.7s ease forwards 1.0s, bob 4.5s ease-in-out infinite 1.8s; }
-    .bubble-bl { bottom: 24px; left: 24px; animation: bIn1 0.7s ease forwards 1.3s, bob 5.5s ease-in-out infinite 2.1s; }
-
-    @keyframes bIn1 { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
-    @keyframes bIn2 { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
-    @keyframes bob { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
-
-    .b-icon { width: 30px; height: 30px; border-radius: 8px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 0.4rem; }
-    .b-icon svg { width: 16px; height: 16px; color: var(--blue-mid); }
-    .b-num { font-size: 1.1rem; font-weight: 700; color: var(--navy); line-height: 1; }
-    .b-label { font-size: 0.7rem; color: var(--muted); line-height: 1.4; margin-top: 2px; }
-    .q-label { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-    .q-mark { font-size: 1.4rem; color: var(--accent); font-family: Georgia, serif; line-height: 1; margin-bottom: 3px; }
-    .q-text { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.8rem; color: var(--text); line-height: 1.5; min-height: 52px; transition: opacity 0.5s; }
-    .q-attr { font-size: 0.72rem; font-weight: 600; color: var(--blue-mid); margin-top: 6px; transition: opacity 0.5s; }
-
-    .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; position: relative; z-index: 5; padding: 0 160px; }
-    @media (max-width: 1100px) { .hero-inner { padding: 0 120px; } }
-    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; padding: 0; } .hero-right { display: none; } .bubble { display: none; } }
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); min-height: 92vh; padding: 5rem 3rem 4rem; position: relative; display: flex; align-items: center; overflow: hidden; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-right { display: none; } }
 
     .hero-left { color: var(--white); }
     .hero-h1 { font-family: 'Source Serif 4', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 0.2rem; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; }
@@ -68,16 +43,36 @@
     @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 
     .hero-bullets { list-style: none; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .hero-bullets li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.85rem; color: rgba(255,255,255,0.9); line-height: 1.5; opacity: 0; transform: translateX(-10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .hero-bullets li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.875rem; color: rgba(255,255,255,0.9); line-height: 1.5; opacity: 0; transform: translateX(-10px); transition: opacity 0.4s ease, transform 0.4s ease; }
     .hero-bullets li.visible { opacity: 1; transform: translateX(0); }
-    .hero-bullets li::before { content: '✓'; flex-shrink: 0; width: 17px; height: 17px; background: rgba(110,179,214,0.2); border: 1px solid rgba(110,179,214,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--accent); margin-top: 2px; }
+    .hero-bullets li::before { content: '✓'; flex-shrink: 0; width: 18px; height: 18px; background: rgba(110,179,214,0.2); border: 1px solid rgba(110,179,214,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--accent); margin-top: 2px; }
     .hero-bullets strong { color: var(--white); }
 
     .price-callout { background: rgba(110,179,214,0.12); border: 1px solid rgba(110,179,214,0.25); border-radius: 10px; padding: 0.9rem 1.1rem; margin-bottom: 1.25rem; opacity: 0; animation: fadeUp 0.6s ease forwards 11s; }
     .price-callout p { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
     .price-callout strong { color: var(--accent); }
-    .hero-cta { display: inline-block; background: var(--white); color: var(--navy); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; opacity: 0; animation: fadeUp 0.6s ease forwards 11.2s; }
+    .hero-cta { display: inline-block; background: var(--white); color: var(--navy); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; opacity: 0; animation: fadeUp 0.6s ease forwards 11.2s; }
     .hero-cta:hover { background: var(--accent); color: var(--white); }
+
+    .hero-right { position: relative; padding: 40px; }
+
+    .bubble { position: absolute; background: var(--white); border-radius: 12px; padding: 0.75rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18); max-width: 150px; opacity: 0; z-index: 10; }
+    .bubble-tl { top: 0; left: 0; animation: bIn1 0.7s ease forwards 0.5s, bob 4s ease-in-out infinite 1.3s; }
+    .bubble-tr { top: 0; right: 0; animation: bIn2 0.7s ease forwards 0.8s, bob 5s ease-in-out infinite 1.6s; }
+    .bubble-br { bottom: 0; right: 0; animation: bIn2 0.7s ease forwards 1.1s, bob 4.5s ease-in-out infinite 1.9s; }
+    .bubble-bl { bottom: 0; left: 0; animation: bIn1 0.7s ease forwards 1.4s, bob 5.5s ease-in-out infinite 2.2s; }
+    @keyframes bIn1 { from{opacity:0;transform:translateX(-16px);} to{opacity:1;transform:translateX(0);} }
+    @keyframes bIn2 { from{opacity:0;transform:translateX(16px);} to{opacity:1;transform:translateX(0);} }
+    @keyframes bob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-7px);} }
+
+    .b-icon { width: 26px; height: 26px; border-radius: 7px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 0.35rem; }
+    .b-icon svg { width: 14px; height: 14px; color: var(--blue-mid); }
+    .b-num { font-size: 0.95rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .b-label { font-size: 0.65rem; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+    .q-label { font-size: 8px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .q-mark { font-size: 1.2rem; color: var(--accent); font-family: Georgia, serif; line-height: 1; }
+    .q-text { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.75rem; color: var(--text); line-height: 1.4; min-height: 48px; transition: opacity 0.5s; }
+    .q-attr { font-size: 0.68rem; font-weight: 600; color: var(--blue-mid); margin-top: 5px; transition: opacity 0.5s; }
 
     .widget-card { background: var(--white); border-radius: 16px; padding: 1.4rem; box-shadow: 0 4px 32px rgba(0,0,0,0.2); opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s; }
     .widget-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
@@ -102,14 +97,10 @@
     .feedback-list { list-style: none; display: flex; flex-direction: column; gap: 6px; max-height: 240px; overflow-y: auto; }
     .feedback-list li { display: flex; align-items: flex-start; gap: 8px; border-radius: 6px; padding: 8px 10px; font-size: 12px; line-height: 1.5; color: var(--text); }
     .feedback-list li .dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; margin-top: 4px; }
-    .fb-neutral { background: #F5F7FA; border: 0.5px solid var(--border); }
-    .fb-neutral .dot { background: var(--muted); }
-    .fb-good { background: #EAF7F0; border: 0.5px solid #A8D5B5; }
-    .fb-good .dot { background: #1A7A4A; }
-    .fb-watch { background: #FEF9EC; border: 0.5px solid #F0D078; }
-    .fb-watch .dot { background: #92620A; }
-    .fb-sensitive { background: #FEF0EE; border: 0.5px solid #F5B8AD; }
-    .fb-sensitive .dot { background: #9B2915; }
+    .fb-neutral { background: #F5F7FA; border: 0.5px solid var(--border); } .fb-neutral .dot { background: var(--muted); }
+    .fb-good { background: #EAF7F0; border: 0.5px solid #A8D5B5; } .fb-good .dot { background: #1A7A4A; }
+    .fb-watch { background: #FEF9EC; border: 0.5px solid #F0D078; } .fb-watch .dot { background: #92620A; }
+    .fb-sensitive { background: #FEF0EE; border: 0.5px solid #F5B8AD; } .fb-sensitive .dot { background: #9B2915; }
 
     .section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
     .section-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.75rem; }
@@ -125,7 +116,7 @@
     .cta-band { background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); padding: 4rem 2rem; text-align: center; color: var(--white); }
     .cta-band h2 { font-family: 'Source Serif 4', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
     .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .cta-btn { display: inline-block; background: var(--white); color: var(--navy); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .cta-btn { display: inline-block; background: var(--white); color: var(--navy); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
     .cta-btn:hover { background: var(--accent); color: var(--white); }
     footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 1.5rem; font-size: 0.8rem; }
     footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
@@ -154,38 +145,6 @@
 </nav>
 
 <section class="hero">
-
-  <div class="bubble bubble-tl">
-    <div class="q-label">What advisors say</div>
-    <div class="q-mark">"</div>
-    <div class="q-text" id="quote-text">The best risk tool I have used.</div>
-    <div class="q-attr" id="quote-attr">James · RIA</div>
-  </div>
-
-  <div class="bubble bubble-tr">
-    <div class="b-icon">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
-    </div>
-    <div class="b-num">Growing</div>
-    <div class="b-label">new planning firms adopting MRI every month</div>
-  </div>
-
-  <div class="bubble bubble-br">
-    <div class="b-icon">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
-    </div>
-    <div class="b-num">15,000+</div>
-    <div class="b-label">peer-reviewed citations behind our methods</div>
-  </div>
-
-  <div class="bubble bubble-bl">
-    <div class="b-icon">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    </div>
-    <div class="b-num">Cost Savings</div>
-    <div class="b-label">vs. legacy tools — advisors pay less and get more</div>
-  </div>
-
   <div class="hero-inner">
     <div class="hero-left">
       <h1 class="hero-h1">Comfort with Risk™</h1>
@@ -206,6 +165,28 @@
     </div>
 
     <div class="hero-right">
+      <div class="bubble bubble-tl">
+        <div class="q-label">What advisors say</div>
+        <div class="q-mark">"</div>
+        <div class="q-text" id="quote-text">The best risk tool I have used.</div>
+        <div class="q-attr" id="quote-attr">James · RIA</div>
+      </div>
+      <div class="bubble bubble-tr">
+        <div class="b-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg></div>
+        <div class="b-num">Growing</div>
+        <div class="b-label">new firms adopting MRI every month</div>
+      </div>
+      <div class="bubble bubble-br">
+        <div class="b-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg></div>
+        <div class="b-num">15,000+</div>
+        <div class="b-label">peer-reviewed citations behind our methods</div>
+      </div>
+      <div class="bubble bubble-bl">
+        <div class="b-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="b-num">Cost Savings</div>
+        <div class="b-label">vs. legacy tools — pay less, get more</div>
+      </div>
+
       <div class="widget-card">
         <div class="widget-header">
           <div>
@@ -246,28 +227,12 @@
 <section class="section scroll-reveal">
   <div class="section-eyebrow">What advisors receive</div>
   <h2 class="section-h2">A complete picture of every client's risk psychology.</h2>
-  <p class="section-lead">Every MRI Comfort with Risk™ report gives advisors clear, actionable language — no interpretation required. The report tells you exactly what to say and where to focus.</p>
+  <p class="section-lead">Every MRI Comfort with Risk™ report gives advisors clear, actionable language — no interpretation required.</p>
   <div class="cards-grid">
-    <div class="card scroll-reveal">
-      <div class="card-icon">📊</div>
-      <div class="card-title">Comfort with Risk™ Score</div>
-      <div class="card-desc">A single 5–95 score that maps directly to a portfolio allocation range, making conversations concrete and defensible.</div>
-    </div>
-    <div class="card scroll-reveal">
-      <div class="card-icon">⚠️</div>
-      <div class="card-title">Priority Items</div>
-      <div class="card-desc">Flags issues that need to be addressed sooner — misalignment between comfort, capacity, and past behavior.</div>
-    </div>
-    <div class="card scroll-reveal">
-      <div class="card-icon">💬</div>
-      <div class="card-title">Advisor Language</div>
-      <div class="card-desc">Pre-written, research-backed language for each finding so advisors can speak to results with confidence.</div>
-    </div>
-    <div class="card scroll-reveal">
-      <div class="card-icon">🔄</div>
-      <div class="card-title">Consistency Check</div>
-      <div class="card-desc">Flags whether the client responded consistently, helping advisors identify when a re-assessment may be warranted.</div>
-    </div>
+    <div class="card scroll-reveal"><div class="card-icon">📊</div><div class="card-title">Comfort with Risk™ Score</div><div class="card-desc">A single 5–95 score that maps directly to a portfolio allocation range.</div></div>
+    <div class="card scroll-reveal"><div class="card-icon">⚠️</div><div class="card-title">Priority Items</div><div class="card-desc">Flags misalignment between comfort, capacity, and past behavior.</div></div>
+    <div class="card scroll-reveal"><div class="card-icon">💬</div><div class="card-title">Advisor Language</div><div class="card-desc">Pre-written, research-backed language for each finding.</div></div>
+    <div class="card scroll-reveal"><div class="card-icon">🔄</div><div class="card-title">Consistency Check</div><div class="card-desc">Flags whether the client responded consistently.</div></div>
   </div>
 </section>
 
@@ -277,106 +242,21 @@
   <a class="cta-btn" href="https://calendly.com/drcharles-moneyandriskinventory/mri-demo">Book a Walkthrough →</a>
 </div>
 
-<footer>
-  <p>© 2025 Money & Risk Inventory, LLC · <a href="/">moneyandriskinventory.com</a></p>
-</footer>
+<footer><p>© 2025 Money & Risk Inventory, LLC · <a href="/">moneyandriskinventory.com</a></p></footer>
 
 <script>
-  document.querySelectorAll('#hero-bullets li').forEach((li, i) => {
-    setTimeout(() => li.classList.add('visible'), 1000 + i * 1500);
-  });
-
-  const quotes = [
-    { text: 'The best risk tool I have used.', attr: 'James · RIA' },
-    { text: 'This is the only tool that meets risk standards in Canada and is defensible.', attr: 'James · RIA, Toronto' },
-    { text: 'We are paying half of what we were paying before for a risk tool and getting more.', attr: 'Susan · Broker/Dealer, Miami' },
-  ];
-  let qi = 0;
-  const qText = document.getElementById('quote-text');
-  const qAttr = document.getElementById('quote-attr');
-  qText.style.transition = 'opacity 0.5s';
-  qAttr.style.transition = 'opacity 0.5s';
-  setInterval(() => {
-    qText.style.opacity = '0'; qAttr.style.opacity = '0';
-    setTimeout(() => {
-      qi = (qi + 1) % quotes.length;
-      qText.textContent = quotes[qi].text;
-      qAttr.textContent = quotes[qi].attr;
-      qText.style.opacity = '1'; qAttr.style.opacity = '1';
-    }, 500);
-  }, 4000);
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-  function getPortfolio(s) {
-    if (s <= 20) return { label: 'Conservative Portfolio', sub: 'Growth assets in the range of 0% to 20%' };
-    if (s <= 38) return { label: 'Conservative-Balanced Portfolio', sub: 'Growth assets in the range of 25% to 40%' };
-    if (s <= 55) return { label: 'Balanced Portfolio', sub: 'Growth assets in the range of 37% to 49%' };
-    if (s <= 70) return { label: 'Balanced-Growth Portfolio', sub: 'Growth assets in the range of 50% to 67%' };
-    if (s <= 85) return { label: 'Growth Portfolio', sub: 'Comfortable with 67% to 82% growth assets' };
-    return { label: 'Aggressive Growth Portfolio', sub: 'Comfortable with 82% to 100% growth assets' };
-  }
-  function getFeedback(s) {
-    const p = getPortfolio(s), b = [];
-    b.push({ t: `Your client would be most comfortable investing in a ${p.label.toLowerCase()}.`, c: 'neutral' });
-    if (s <= 20) {
-      b.push({ t: 'These portfolios prioritize capital preservation with stable fixed-income and cash assets.', c: 'neutral' });
-      b.push({ t: "Your client's comfort with taking investment risk does not align with higher-risk portfolio strategies.", c: 'watch' });
-      b.push({ t: 'Their comfort with risk is further limited by financial loss history and low confidence.', c: 'watch' });
-      b.push({ t: 'A conservative portfolio is the appropriate starting point. Revisit allocation only after trust and confidence are firmly established.', c: 'neutral' });
-      b.push({ t: "The elements comprising your client's MRI Comfort with Risk score are out of balance.", c: 'watch' });
-      b.push({ t: 'A significant market decline could cause your client to be deeply concerned about their financial future.', c: 'sensitive' });
-    } else if (s <= 38) {
-      b.push({ t: "Your client's comfort with taking investment risk does not fully align with their past risk-taking behavior.", c: 'watch' });
-      b.push({ t: 'Their comfort with risk is further limited by financial loss history and low confidence.', c: 'watch' });
-      b.push({ t: 'A conservative-balanced portfolio is the appropriate starting point. Revisit allocation only after trust and confidence are firmly established.', c: 'neutral' });
-      b.push({ t: "The elements comprising your client's MRI Comfort with Risk score are out of balance.", c: 'watch' });
-      b.push({ t: 'If your client exhibits conflicting behavior or expresses a concern about current market conditions, they should complete the MRI Comfort with Risk assessment process again.', c: 'watch' });
-      b.push({ t: 'It appears that your client responded to the MRI in a consistent manner.', c: 'good' });
-    } else if (s <= 55) {
-      b.push({ t: 'These portfolios hold more growth assets than conservative portfolios while including stable fixed-income and cash assets to reduce volatility.', c: 'neutral' });
-      b.push({ t: "Your client's comfort with taking investment risk aligns with their past risk-taking behavior, but their comfort with taking investment risk exceeds their ability to tolerate large investment losses. Proceed cautiously in the portfolio development process.", c: 'watch' });
-      b.push({ t: "The elements comprising your client's MRI Comfort with Risk score are slightly out of balance.", c: 'watch' });
-      b.push({ t: 'A significant market decline could cause your client to be concerned about their financial future.', c: 'sensitive' });
-      b.push({ t: 'If your client exhibits conflicting behavior or expresses a concern about current market conditions or the performance of their portfolio, they should complete the MRI Comfort with Risk assessment process again.', c: 'watch' });
-      b.push({ t: 'It appears that your client responded to the MRI in a consistent manner.', c: 'good' });
-    } else if (s <= 70) {
-      b.push({ t: 'These portfolios emphasize growth while maintaining some stability through diversified asset allocation.', c: 'neutral' });
-      b.push({ t: "Your client's comfort with taking investment risk aligns well with their past risk-taking behavior.", c: 'good' });
-      b.push({ t: "The elements comprising your client's MRI Comfort with Risk score are reasonably balanced.", c: 'good' });
-      b.push({ t: 'It appears that your client responded to the MRI in a consistent manner.', c: 'good' });
-    } else {
-      b.push({ t: 'These portfolios are appropriate for clients with high comfort with market fluctuations and long investment horizons.', c: 'neutral' });
-      b.push({ t: "Your client's comfort with taking investment risk aligns with their past risk-taking behavior and risk capacity.", c: 'good' });
-      b.push({ t: "The elements comprising your client's MRI Comfort with Risk score are well balanced.", c: 'good' });
-      b.push({ t: 'Monitor reactions to significant market moves to ensure comfort remains consistent over time.', c: 'neutral' });
-      b.push({ t: 'It appears that your client responded to the MRI in a consistent manner.', c: 'good' });
-    }
-    return b;
-  }
-  const typeClass = { neutral: 'fb-neutral', good: 'fb-good', watch: 'fb-watch', sensitive: 'fb-sensitive' };
-  function update() {
-    const s = parseInt(document.getElementById('main-slider').value);
-    const pct = ((s - 5) / 90 * 100).toFixed(1);
-    document.getElementById('score-num').textContent = s;
-    document.getElementById('slider-val').textContent = s;
-    const p = getPortfolio(s);
-    document.getElementById('portfolio-label').textContent = p.label;
-    document.getElementById('portfolio-sub').textContent = p.sub;
-    document.getElementById('track-fill').style.width = pct + '%';
-    document.getElementById('track-dot').style.left = pct + '%';
-    const list = document.getElementById('feedback-list');
-    list.innerHTML = '';
-    getFeedback(s).forEach(b => {
-      const li = document.createElement('li');
-      li.className = typeClass[b.c];
-      li.innerHTML = `<span class="dot"></span><span>${b.t}</span>`;
-      list.appendChild(li);
-    });
-  }
+  document.querySelectorAll('#hero-bullets li').forEach((li,i)=>{setTimeout(()=>li.classList.add('visible'),1000+i*1500);});
+  const quotes=[{text:'The best risk tool I have used.',attr:'James · RIA'},{text:'This is the only tool that meets risk standards in Canada and is defensible.',attr:'James · RIA, Toronto'},{text:'We are paying half of what we were paying before for a risk tool and getting more.',attr:'Susan · Broker/Dealer, Miami'}];
+  let qi=0;
+  const qText=document.getElementById('quote-text'),qAttr=document.getElementById('quote-attr');
+  qText.style.transition='opacity 0.5s';qAttr.style.transition='opacity 0.5s';
+  setInterval(()=>{qText.style.opacity='0';qAttr.style.opacity='0';setTimeout(()=>{qi=(qi+1)%quotes.length;qText.textContent=quotes[qi].text;qAttr.textContent=quotes[qi].attr;qText.style.opacity='1';qAttr.style.opacity='1';},500);},4000);
+  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12});
+  document.querySelectorAll('.scroll-reveal').forEach(el=>observer.observe(el));
+  function getPortfolio(s){if(s<=20)return{label:'Conservative Portfolio',sub:'Growth assets in the range of 0% to 20%'};if(s<=38)return{label:'Conservative-Balanced Portfolio',sub:'Growth assets in the range of 25% to 40%'};if(s<=55)return{label:'Balanced Portfolio',sub:'Growth assets in the range of 37% to 49%'};if(s<=70)return{label:'Balanced-Growth Portfolio',sub:'Growth assets in the range of 50% to 67%'};if(s<=85)return{label:'Growth Portfolio',sub:'Comfortable with 67% to 82% growth assets'};return{label:'Aggressive Growth Portfolio',sub:'Comfortable with 82% to 100% growth assets'};}
+  function getFeedback(s){const p=getPortfolio(s),b=[];b.push({t:`Your client would be most comfortable investing in a ${p.label.toLowerCase()}.`,c:'neutral'});if(s<=20){b.push({t:'These portfolios prioritize capital preservation with stable fixed-income and cash assets.',c:'neutral'});b.push({t:"Your client's comfort with taking investment risk does not align with higher-risk portfolio strategies.",c:'watch'});b.push({t:'Their comfort with risk is further limited by financial loss history and low confidence.',c:'watch'});b.push({t:'A conservative portfolio is the appropriate starting point. Revisit allocation only after trust and confidence are firmly established.',c:'neutral'});b.push({t:"The elements comprising your client's MRI Comfort with Risk score are out of balance.",c:'watch'});b.push({t:'A significant market decline could cause your client to be deeply concerned about their financial future.',c:'sensitive'});}else if(s<=38){b.push({t:"Your client's comfort with taking investment risk does not fully align with their past risk-taking behavior.",c:'watch'});b.push({t:'Their comfort with risk is further limited by financial loss history and low confidence.',c:'watch'});b.push({t:'A conservative-balanced portfolio is the appropriate starting point. Revisit allocation only after trust and confidence are firmly established.',c:'neutral'});b.push({t:"The elements comprising your client's MRI Comfort with Risk score are out of balance.",c:'watch'});b.push({t:'If your client exhibits conflicting behavior or expresses a concern about current market conditions, they should complete the MRI Comfort with Risk assessment process again.',c:'watch'});b.push({t:'It appears that your client responded to the MRI in a consistent manner.',c:'good'});}else if(s<=55){b.push({t:'These portfolios hold more growth assets than conservative portfolios while including stable fixed-income and cash assets to reduce volatility.',c:'neutral'});b.push({t:"Your client's comfort with taking investment risk aligns with their past risk-taking behavior, but their comfort with taking investment risk exceeds their ability to tolerate large investment losses. Proceed cautiously in the portfolio development process.",c:'watch'});b.push({t:"The elements comprising your client's MRI Comfort with Risk score are slightly out of balance.",c:'watch'});b.push({t:'A significant market decline could cause your client to be concerned about their financial future.',c:'sensitive'});b.push({t:'If your client exhibits conflicting behavior or expresses a concern about current market conditions or the performance of their portfolio, they should complete the MRI Comfort with Risk assessment process again.',c:'watch'});b.push({t:'It appears that your client responded to the MRI in a consistent manner.',c:'good'});}else if(s<=70){b.push({t:'These portfolios emphasize growth while maintaining some stability through diversified asset allocation.',c:'neutral'});b.push({t:"Your client's comfort with taking investment risk aligns well with their past risk-taking behavior.",c:'good'});b.push({t:"The elements comprising your client's MRI Comfort with Risk score are reasonably balanced.",c:'good'});b.push({t:'It appears that your client responded to the MRI in a consistent manner.',c:'good'});}else{b.push({t:'These portfolios are appropriate for clients with high comfort with market fluctuations and long investment horizons.',c:'neutral'});b.push({t:"Your client's comfort with taking investment risk aligns with their past risk-taking behavior and risk capacity.",c:'good'});b.push({t:"The elements comprising your client's MRI Comfort with Risk score are well balanced.",c:'good'});b.push({t:'Monitor reactions to significant market moves to ensure comfort remains consistent over time.',c:'neutral'});b.push({t:'It appears that your client responded to the MRI in a consistent manner.',c:'good'});}return b;}
+  const tc={neutral:'fb-neutral',good:'fb-good',watch:'fb-watch',sensitive:'fb-sensitive'};
+  function update(){const s=parseInt(document.getElementById('main-slider').value);const pct=((s-5)/90*100).toFixed(1);document.getElementById('score-num').textContent=s;document.getElementById('slider-val').textContent=s;const p=getPortfolio(s);document.getElementById('portfolio-label').textContent=p.label;document.getElementById('portfolio-sub').textContent=p.sub;document.getElementById('track-fill').style.width=pct+'%';document.getElementById('track-dot').style.left=pct+'%';const list=document.getElementById('feedback-list');list.innerHTML='';getFeedback(s).forEach(b=>{const li=document.createElement('li');li.className=tc[b.c];li.innerHTML=`<span class="dot"></span><span>${b.t}</span>`;list.appendChild(li);});}
   update();
 </script>
 </body>
