@@ -42,6 +42,9 @@
     .hero-bullets li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.9rem; color: rgba(255,255,255,0.92); line-height: 1.5; }
     .hero-bullets li::before { content: '✓'; flex-shrink: 0; width: 18px; height: 18px; background: rgba(110,179,214,0.2); border: 1px solid rgba(110,179,214,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--accent); margin-top: 2px; }
     .hero-bullets strong { color: var(--white); }
+    .js .hero-bullets li { opacity: 0; transform: translateX(-10px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .js .hero-bullets li.visible { opacity: 1; transform: translateX(0); }
+    @media (prefers-reduced-motion: reduce) { .js .hero-bullets li { opacity: 1; transform: none; transition: none; } }
     .btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
     .btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; }
     .btn-light { background: var(--white); color: var(--navy); } .btn-light:hover { background: var(--accent); color: var(--white); }
@@ -115,13 +118,13 @@
       <h1 class="hero-h1">MRI Couples</h1>
       <p class="hero-h1-accent">Two partners. One household score. One conversation.</p>
       <p class="hero-desc">Both partners complete MRI Core. You see their financial psychology side by side, a combined household Comfort with Risk score, and exactly where they match and where they differ, with insights on what to discuss.</p>
-      <ul class="hero-bullets">
+      <ul class="hero-bullets" id="hero-bullets">
         <li><span><strong>Combined household score</strong> — one Comfort with Risk score that blends both partners' answers</span></li>
         <li><span><strong>Match and differ</strong> — 16 areas of risk and money psychology, compared side by side</span></li>
         <li><span><strong>Advisor insights</strong> — what to discuss, in plain language, for every difference</span></li>
         <li><span><strong>Your Money Match</strong> — a client-friendly report each partner can receive</span></li>
         <li><span><strong>Private results page</strong> — each partner can see their own results on their own</span></li>
-        <li><span><strong>English and French (Canada)</strong> — client materials available for Canadian firms</span></li>
+        <li><span><strong>English and French (Canada)</strong> — client materials for Canadian firms, with more languages on request</span></li>
       </ul>
       <div class="btn-row">
         <a class="btn btn-light" href="https://couples.moneyandriskinventory.com">Try the live demo →</a>
@@ -183,7 +186,7 @@
     <div class="card"><div class="card-title">Your Money Match</div><div class="card-desc">A client-ready PDF in the firm's branding, with the combined score and conversation starters. Sent only with both partners' agreement.</div></div>
     <div class="card"><div class="card-title">Private Money Snapshot</div><div class="card-desc">A secure page where each partner sees their own results, with short explanations of each area.</div></div>
     <div class="card"><div class="card-title">White-labeled</div><div class="card-desc">Your firm's name and logo on the survey, the report and the emails.</div></div>
-    <div class="card"><div class="card-title">English and French (Canada)</div><div class="card-desc">For Canadian firms, the advisor chooses the language of what the couple receives. The advisor dashboard stays in English.</div></div>
+    <div class="card"><div class="card-title">English and French (Canada)</div><div class="card-desc">For Canadian firms, the advisor chooses the language of what the couple receives. More languages are available on request. The advisor dashboard stays in English.</div></div>
   </div>
 </section>
 
@@ -205,5 +208,9 @@
 </div>
 
 <footer><p>© 2026 Money & Risk Inventory, LLC · <a href="/">moneyandriskinventory.com</a></p></footer>
+<script>
+  document.documentElement.classList.add('js');
+  document.querySelectorAll('#hero-bullets li').forEach(function(li,i){setTimeout(function(){li.classList.add('visible')},800+i*1500);});
+</script>
 </body>
 </html>
